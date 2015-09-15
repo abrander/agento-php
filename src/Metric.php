@@ -36,11 +36,16 @@ class Metric extends Message {
 				$tagsAsJson = '{}';
 			}
 
-			$json = "{\"t\":2,\"i\":{$identifierAsJson},\"p\":{$probabilityAsJson},\"v\":{$valueAsJson},\"T\":{$tagsAsJson}}";
+			$json = sprintf("{\"t\":%d,\"i\":%s,\"p\":%s,\"v\":%s,\"T\":%s}",
+				self::TYPE,
+				$identifierAsJson,
+				$probabilityAsJson,
+				$valueAsJson,
+				$tagsAsJson);
 
 			return $json;
 		} else {
-			$obj = $this->getBaseObject(1, $tags);
+			$obj = $this->getBaseObject(self::TYPE, $tags);
 			$obj['v'] = $this->value;
 
 			return json_encode($obj, JSON_PRESERVE_ZERO_FRACTION | JSON_FORCE_OBJECT);
