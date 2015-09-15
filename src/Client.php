@@ -37,21 +37,6 @@ class Client {
 	}
 
 	/**
-	 * Log an event for later counting.
-	 * @param {string} $identifier A string representing the event
-	 * @param {float} $probability A probability for the event to propagate (1.0 means always)
-	 */
-	public function event($identifier, $probability) {
-		$rnd = mt_rand() / mt_getrandmax();
-
-		if ($probability < $rnd)
-			return;
-
-		$event = new Event($identifier, $probability);
-		$this->send($event);
-	}
-
-	/**
 	 * @param {string} $identifier A string representing the metric
 	 * @param {float} $value A value representing the metric
 	 * @param {float} $probability A probability for the metric to propagate (1.0 means always)
