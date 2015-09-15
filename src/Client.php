@@ -16,8 +16,6 @@ class Client {
 		// FIXME: Add sanity checks
 		$this->host = $agentoHost;
 		$this->port = $agentoUdpPort;
-
-		$this->tags = new \stdClass();
 	}
 
 	/**
