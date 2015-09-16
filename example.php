@@ -12,6 +12,6 @@ $a->addTag('hostname', 'webserver07');
 $a->addTag('httphost', 'shopapi');
 
 // We executed in 12.4 ms
-$a->metric('executionTime', 1.0, 12.0);
+$a->metric('executionTime', 1.0, 12.4);
 
 ?>
