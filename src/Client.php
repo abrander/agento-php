@@ -62,7 +62,7 @@ class Client {
 	private function send(Message $message) {
 		$payload = $message->getPayload($this->tags);
 		$length = strlen($payload);
-echo($payload."\n");
+
 		socket_sendto($this->getSock(), $payload, $length, 0, $this->host, $this->port);
 	}
 }
