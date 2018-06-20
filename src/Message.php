@@ -12,7 +12,7 @@ class Message {
 	}
 
 	protected static function encodeFloat($number) {
-		if (is_float($number)) {
+		if (is_float($number) || is_int($number)) {
 			// Note that %f is locale specific
 			$encoded = sprintf('%F', $number);
 
